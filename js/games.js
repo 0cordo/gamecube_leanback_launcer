@@ -500,7 +500,7 @@ Promise.all([
                 if (lastPlayed.length > 0) {
                     return i + 1
                 } else {
-                    return i
+                    return $('.gamesCategory').length - 1
                 }
 
             })
@@ -653,7 +653,6 @@ Promise.all([
                     return d.players === 1
 
                 })
-                console.log(onePlayer)
                 let randomGame = Math.floor(Math.random() * onePlayer.length);
 
                 $(".gamesCategory").not(':eq(0)').remove()
