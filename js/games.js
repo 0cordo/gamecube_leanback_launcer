@@ -537,7 +537,8 @@ Promise.all([
                     if (e.charCode === 13) {
                         $.post("/lastPlayed", {
                                 "date": new Date(),
-                                "game": selectedGame
+                                "game": selectedGame,
+                                "os": navigator.platform
                             },
                             function(data) {});
                     }

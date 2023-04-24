@@ -34,10 +34,16 @@ app.post('/lastPlayed', (req, res) => {
         directory = __dirname + data.toString()
         gamePlayed = req.body
         gameName = gamePlayed.game.file.replace(/ /g, '\\ ').replace(/\(/g, "\\(").replace(/\)/g, "\\)")
-
+        operatingSystem = gamePlayed.os
         gameName = gameName.replace(/\\\\/g, "\\")
         gameName = gameName.replace(/\\\\/g, "\\")
-        execute = "open -a Dolphin -e " + directory + gameName
+        
+        if (operatingSystem.substring(0,3) === "Win"){
+            execute = 'Dolphin.exe -e' + directory + gameName
+        }else {
+            execute = "open -a Dolphin -e " + directory + gameName
+        }
+        
 
 
         childProcess.exec(execute, function(err, stdout, stderr) {
@@ -68,7 +74,6 @@ app.post('/lastPlayed', (req, res) => {
 
     });
 });
-
 const backupGamesFolder = './backup_games/';
 availableGames = "data/gameDirectory.json"
 let directory = [];
@@ -81,7 +86,6 @@ fs.readdir(backupGamesFolder, (err, files) => {
         directory.push(game);
         fs.writeFile(availableGames, JSON.stringify(""), (err) => {
             fs.writeFile(availableGames, JSON.stringify(directory), (err) => {
-                console.log(err);
             });
         });
 
