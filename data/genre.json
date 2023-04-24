@@ -1,0 +1,68 @@
+{
+  "code": 200,
+  "status": "Success",
+  "data": {
+    "count": 29,
+    "genres": [
+      {
+        "id": 0,
+        "name": "Top Games"
+      },
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 2,
+        "name": "Adventure"
+      },
+      {
+        "id": 4,
+        "name": "Role-Playing"
+      },
+      {
+        "id": 5,
+        "name": "Board Game"
+      },
+      {
+        "id": 6,
+        "name": "Strategy"
+      },
+      {
+        "id": 7,
+        "name": "Racing"
+      },
+      {
+        "id": 8,
+        "name": "Shooter"
+      },
+      {
+        "id": 9,
+        "name": "Life Simulation"
+      },
+      {
+        "id": 10,
+        "name": "Fighting"
+      },
+      {
+        "id": 11,
+        "name": "Sports"
+      },
+      {
+        "id": 15,
+        "name": "Platform"
+      },
+      {
+        "id": 17,
+        "name": "Music"
+      },
+      {
+        "id": 18,
+        "name": "Horror"
+      }
+    ]
+  },
+  "remaining_monthly_allowance": 2945,
+  "extra_allowance": 0,
+  "allowance_refresh_timer": 2522984
+}
