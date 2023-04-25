@@ -10,6 +10,10 @@ As a big fan of Gamecube, UI design and coding this was a side project of mine t
 - Dolphin installed on your computer
 - physical copies of any games you plan on playing
 
+## Windows Exception
+- Download Dolphin and extract all file contents into the gamecube_leanback_launcer_main folder
+- If the Dolphin.exe and .dll files are not in this directory it will not work
+
 ## To start the application:
 - npm install
 - place your backup game files to the backup_games folder
