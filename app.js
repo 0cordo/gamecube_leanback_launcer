@@ -33,13 +33,14 @@ app.post('/lastPlayed', (req, res) => {
             console.log(data.toString());
         directory = __dirname + data.toString()
         gamePlayed = req.body
+        winFile = gamePlayed.game.file
         gameName = gamePlayed.game.file.replace(/ /g, '\\ ').replace(/\(/g, "\\(").replace(/\)/g, "\\)")
         operatingSystem = gamePlayed.os
         gameName = gameName.replace(/\\\\/g, "\\")
         gameName = gameName.replace(/\\\\/g, "\\")
         
         if (operatingSystem.substring(0,3) === "Win"){
-            execute = 'Start-Process ./Dolphin.exe ./backup_games/' + gameName
+            execute = 'Start-Process ./Dolphin.exe """./backup_games/' + winFile + '"""'
         }else {
             execute = "open -a Dolphin -e " + directory + gameName
         }
