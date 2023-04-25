@@ -40,7 +40,7 @@ app.post('/lastPlayed', (req, res) => {
         gameName = gameName.replace(/\\\\/g, "\\")
         
         if (operatingSystem.substring(0,3) === "Win"){
-            execute = 'Start-Process ./Dolphin.exe """./backup_games/' + winFile + '"""'
+            execute = 'Start-Process .\\Dolphin.exe """.\\backup_games\\' + winFile + '"""'
         }else {
             execute = "open -a Dolphin -e " + directory + gameName
         }
