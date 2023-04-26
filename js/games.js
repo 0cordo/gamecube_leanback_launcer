@@ -264,8 +264,8 @@ function resizeIframe(iframe) {
     iframe.height = iframe.contentWindow.document.body.scrollHeight + "px";
 }
 Promise.all([
-    fetch('data/gamelist.json'),
-    fetch('data/genre.json'),
+    fetch('https://raw.githubusercontent.com/0cordo/gamecube_leanback_launcer/main/data/gamelist.json'),
+    fetch('https://raw.githubusercontent.com/0cordo/gamecube_leanback_launcer/main/data/genre.json'),
     fetch('data/lastPlayed.json'),
     fetch('data/gameDirectory.json')
 ]).then(function(responses) {
@@ -289,13 +289,15 @@ Promise.all([
 
     var yourGameLibrary = games.filter((el) => {
         return availableGames.some((f) => {
-            return f.name.split(' (')[0] === el.game_title
+            // console.log(f.name)
+            return f.name.split(' (')[0] === el.game_title.replace(":"," -")
 
         });
     });
+    console.log(yourGameLibrary)
     var yourGameLibrary = games.filter((el) => {
         return availableGames.some((f) => {
-            if (f.name.split(' (')[0] === el.game_title) {
+            if (f.name.split(' (')[0] === el.game_title.replace(":"," -")) {
                 return el['file'] = f.name;
             }
 
